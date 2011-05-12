@@ -1,4 +1,9 @@
+user sign up:
+
 what is the point of the divs wrapping fields on user sign up page?
+
+password confirmation field is never considred invalid (even if blank or not matching; only password field is marked as invalid
+password confirmation field is not cleared after invalid signup
 
 failed sign up re-renders sign up page but
   1) the form has extra space the second time because of extra div wrapping invalid fields
