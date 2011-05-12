@@ -8,3 +8,7 @@ password confirmation field is not cleared after invalid signup
 failed sign up re-renders sign up page but
   1) the form has extra space the second time because of extra div wrapping invalid fields
   2) the url changes to /users
+  
+  
+  spec_helper.rb:
+  test_sign_in relies on 'controller', so it doesn't work in integration tests (which are under spec/requests)
