@@ -1,5 +1,6 @@
 module SessionsHelper
-
+  # implements persistent sessions 
+  
   # appears in both SessionsController and UsersController
   def sign_in(user)
     cookies.permanent.signed[:remember_token] = [user.id, user.salt]
