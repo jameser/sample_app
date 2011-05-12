@@ -1,0 +1,5 @@
+what is the point of the divs wrapping fields on user sign up page?
+
+failed sign up re-renders sign up page but
+  1) the form has extra space the second time because of extra div wrapping invalid fields
+  2) the url changes to /users
