@@ -12,3 +12,7 @@ failed sign up re-renders sign up page but
   
   spec_helper.rb:
   test_sign_in relies on 'controller', so it doesn't work in integration tests (which are under spec/requests)
+  
+
+Chapter 9
+  pagination: will_paginate was a bit hard to get working (need 3.0pre2) so I also tried kaminari. kaminari seemed slower.
