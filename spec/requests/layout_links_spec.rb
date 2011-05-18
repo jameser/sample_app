@@ -68,6 +68,34 @@ describe "LayoutLinks" do
       response.should have_selector("a", :href => user_path(@user),
                                          :content => "Profile")
     end
-  end
+    it "should have a settings link" do
+      visit root_path
+      response.should have_selector("a", :href => edit_user_path(@user),
+                                         :content => "Settings")
+    end
+    
+	it "should have a users link" do
+      visit root_path
+      response.should have_selector("a", :href => users_path,
+                                         :content => "Users")
+    end
 
+	it "should not show delete links on the users index page" do
+	  visit users_path
+      response.should_not have_selector("a", :content => "delete") # how can I check the url too?
+    end
+
+    describe "as an admin user" do
+
+      before(:each) do
+        admin = Factory(:user, :email => "admin@example.com", :admin => true)
+	    integration_sign_in(admin)
+	  end
+   
+	  it "should have delete links on the users index page" do
+	    visit users_path
+        response.should have_selector("a", :content => "delete") # how can I check the url too?
+      end
+    end
+  end
 end

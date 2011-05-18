@@ -18,3 +18,4 @@ Chapter 9
 
 Chapter 10
   pagination: will_paginate was a bit hard to get working (need 3.0pre2) so I also tried kaminari. kaminari seemed slower.
+  exercise 10.4: how can we check that the url stuff is right in the destroy link?
