@@ -30,10 +30,12 @@ gem 'will_paginate', '3.0pre2'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 
+gem 'faker' # to allow rake db:populate on heroku
+
 group :development do
   gem 'rspec-rails'
   gem 'annotate-models'
-  gem 'faker'
+  #gem 'faker'
 
 end
 

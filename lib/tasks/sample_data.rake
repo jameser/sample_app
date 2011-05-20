@@ -1,4 +1,4 @@
-
+# seems like anything required out here will be loaded when doing any rake task(?)
 namespace :db do
   desc "Fill database with sample data"
   task :populate => :environment do
