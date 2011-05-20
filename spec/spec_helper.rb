@@ -1,4 +1,4 @@
-require 'rubygems'
+#require 'rubygems'
 require 'spork'
 
 Spork.prefork do
@@ -13,7 +13,7 @@ Spork.prefork do
   # in ./support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-  Rspec.configure do |config|
+  RSpec.configure do |config|
     # == Mock Framework
     #
     # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
