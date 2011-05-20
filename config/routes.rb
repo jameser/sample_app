@@ -2,7 +2,9 @@ SampleApp::Application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-
+  resources :microposts, :only => [:create, :destroy]
+  
+  
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
@@ -12,6 +14,9 @@ SampleApp::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
 
+  # my primitive fix to allow pagination following a failed microposts#create
+  # maybe a better way is to create a microposts index action and redirect from there
+  match '/microposts',  :to => 'pages#home' 
   
   #get "pages/about"
   #get "pages/contact"

@@ -30,8 +30,12 @@ module SessionsHelper
     user == current_user
   end
 
+  def authenticate
+    deny_access unless signed_in?
+  end
+
   def deny_access
-	store_location # puts where they were trying to go into session (cookie)
+	store_location # stores where they were trying to go into session (cookie)
     redirect_to signin_path, :notice => "Please sign in to access this page."
   end
   
